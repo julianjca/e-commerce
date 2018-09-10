@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
 
+  <!-- hover -->
+  <link rel="stylesheet" href="./styles/hover-min.css">
+
   <title>E-Commerce</title>
 </head>
 
@@ -29,14 +32,14 @@
       <div class="menu">
         <ul class="navbar-nav">
           <li>
-            <a href="#landing" id="shopping-nav"><i class="fas fa-shopping-cart"></i>
+            <a href="#" id="shopping-nav"><i class="fas fa-shopping-cart"></i>
             </a>
           </li>
           <li>
-            <a href="#profile" id="register-nav">Register</a>
+            <a href="#" class="hvr-grow-shadow" id="register-nav">Register</a>
           </li>
           <li>
-            <a href="#portofolio" id="login-nav">Log In</a>
+            <a href="#" id="login-nav" class="hvr-grow-shadow">Log In</a>
           </li>
         </ul>
       </div>
@@ -46,57 +49,77 @@
   <div class="category-list">
     <ul>
       <li>
-        <a href="#landing">
+        <a href="#">
           Category 1
         </a>
       </li>
       <li>
-        <a href="#profile">Category 2</a>
+        <a href="#">Category 2</a>
       </li>
       <li>
-        <a href="#portofolio">Category 3</a>
+        <a href="#">Category 3</a>
       </li>
       <li>
-        <a href="#portofolio">Category 3</a>
+        <a href="#">Category 3</a>
       </li>
       <li>
-        <a href="#portofolio">Category 3</a>
+        <a href="#">Category 3</a>
       </li>
       <li>
-        <a href="#portofolio">Category 3</a>
+        <a href="#">Category 3</a>
       </li>
     </ul>
   </div>
 
+  <div id="cart">
+    <h2>This Is Your Cart</h2>
+    <h3>Content</h3>
+    <h4 id="close">
+      close
+    </h4>
+  </div>
+
   <div class="landing">
     <h2>Selling Very High <br> Quality Products</h2>
-    <h3>See More</h3>
+    <h3 class="hvr-grow-shadow" id="seemore">See More</h3>
   </div>
 
   <div class="best-seller">
     <h2>Best Selling Products</h2>
     <div class="container-bs">
-      <div class="product-container">
+      <div class="product-container hvr-grow">
         <img src="./images/shoes1.jpg" alt="">
+        <p>Product 1</p>
       </div>
-      <div class="product-container">
+      <div class="product-container hvr-grow">
         <img src="./images/shoes2.jpg" alt="">
-      </div>
-      <div class="product-container">
-        <img src="./images/shoes3.jpg" alt="">
-      </div>
-      <div class="product-container">
-        <img src="./images/shoes1.jpg" alt="">
-      </div>
-      <div class="product-container">
-        <img src="./images/shoes2.jpg" alt="">
-      </div>
-      <div class="product-container">
-        <img src="./images/shoes3.jpg" alt="">
-      </div>
+        <p>Product 1</p>
 
+      </div>
+      <div class="product-container hvr-grow">
+        <img src="./images/shoes3.jpg" alt="">
+        <p>Product 1</p>
+
+      </div>
+      <div class="product-container hvr-grow">
+        <img src="./images/shoes1.jpg" alt="">
+        <p>Product 1</p>
+
+      </div>
+      <div class="product-container hvr-grow">
+        <img src="./images/shoes2.jpg" alt="">
+        <p>Product 1</p>
+
+      </div>
+      <div class="product-container hvr-grow">
+        <img src="./images/shoes3.jpg" alt="">
+        <p>Product 1</p>
+
+      </div>
     </div>
   </div>
+
+  <script src="./scripts/index.js"></script>
 </body>
 
 </html>

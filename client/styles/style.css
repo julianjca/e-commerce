@@ -42,7 +42,7 @@ p {
 
 .logo h1 {
   margin-left: 25%;
-  margin-top: 7%;
+  margin-top: 9%;
 }
 
 .menu li {
@@ -75,6 +75,7 @@ p {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 10px;
+  display: block;
 }
 
 #shopping-nav {
@@ -89,6 +90,7 @@ p {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 10px;
+  display: block;
 }
 
 .category-list li {
@@ -139,7 +141,7 @@ p {
   font-weight: 700;
 }
 
-.landing h3 {
+#seemore {
   font-family: "Open Sans";
   color: #ffff;
   background-color: #f1663f;
@@ -147,19 +149,23 @@ p {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 40px;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 300;
   width: 20%;
   padding: 1% 0;
   border-radius: 20px;
+  display: block;
+  cursor: pointer;
 }
 
 .product-container img {
   object-fit: cover;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   display: block;
   margin: 0 auto;
+  margin-top: 30px;
 }
 
 .container-bs {
@@ -170,6 +176,7 @@ p {
   margin-right: auto;
   margin-left: auto;
   margin-top: 40px;
+  padding-bottom: 5%;
 }
 
 .best-seller h2 {
@@ -179,7 +186,58 @@ p {
   text-align: center;
   margin-top: 5%;
   font-size: 40px;
-  border-bottom: 1px solid black;
-  width: 60%;
+  border-bottom: 1px solid rgb(167, 167, 167);
+  width: 35%;
   padding-bottom: 20px;
+  color: rgb(47, 47, 47);
+}
+
+.product-container {
+  border: 1px solid rgb(221, 221, 221);
+  height: 400px;
+  margin-bottom: 40px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px 0 rgba(58, 58, 58, 0.2), 0 6px 20px 0 rgba(65, 65, 65, 0.19) !important;
+}
+
+.product-container p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#cart {
+  display: none;
+  /* Hidden by default */
+  z-index: 999;
+  /* Sit on top */
+  /* padding-top: 100px; */
+  /* Location of the box */
+  width: 60%;
+  /* Full width */
+  height: 80%;
+  /* Full height */
+  /* Enable scroll if needed */
+  background-color: #ffffffe7;
+  /* Fallback color */
+  border: 1px solid gray;
+  /* Black w/ opacity */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin-top: -100px;
+  position: absolute;
+}
+
+#cart h2 {
+  margin-top: 40px;
+}
+
+#close {
+  cursor: pointer;
 }
