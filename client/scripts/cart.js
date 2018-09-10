@@ -107,7 +107,7 @@ Vue.component('main-cart', {
     },
     methods : {
       closeCart : function(){
-        this.$emit('closeModal');
+        this.$emit('close-modal');
       }
     }
   }

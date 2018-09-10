@@ -27,21 +27,21 @@
 
 <body>
   <div id="app">
-    <main-header @showModal="show"></main-header>
+    <main-header @show-modal="show"></main-header>
 
+    <main-cart v-show="showModal" @close-modal="close"></main-cart>
+
+    <main-landing></main-landing>
     <main-category></main-category>
 
-    <main-cart v-show="showModal" @closeModal="close"></main-cart>
-
-    <div class="landing">
-      <h2>Selling Very High <br> Quality Products</h2>
-      <h3 class="hvr-grow-shadow" id="seemore">See More</h3>
-    </div>
 
     <div class="best-seller">
       <h2>Best Selling Products</h2>
       <div class="container-bs">
-        <div class="product-container hvr-grow">
+        <div v-for="item in products">
+          <product-comp v-bind:product="item"></product-comp>
+        </div>
+        <!-- <div class="product-container hvr-grow">
           <img src="./images/shoes1.jpg" alt="">
           <p>Product 1</p>
         </div>
@@ -69,7 +69,7 @@
           <img src="./images/shoes3.jpg" alt="">
           <p>Product 1</p>
 
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -112,6 +112,9 @@
 
   </div>
 
+
+  <script src="./scripts/product.js"></script>
+  <script src="./scripts/landing.js"></script>
   <script src="./scripts/cart.js"></script>
   <script src="./scripts/footer.js"></script>
   <script src="./scripts/category.js"></script>

@@ -28,7 +28,7 @@ Vue.component('main-header', {
 </div>`,
 methods : {
   showCart : function(){
-    this.$emit('showModal');
+    this.$emit('show-modal');
   }
 }
 });
