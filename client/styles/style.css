@@ -213,7 +213,7 @@ p {
 
 #cart {
   border-radius: 10px;
-  display: none;
+  /* display: none; */
   /* Hidden by default */
   z-index: 999;
   /* Sit on top */
@@ -221,7 +221,7 @@ p {
   /* Location of the box */
   width: 60%;
   /* Full width */
-  height: 80%;
+  height: 600px;
   /* Full height */
   /* Enable scroll if needed */
   background-color: #ffffff;
@@ -243,6 +243,7 @@ p {
 
 #close {
   cursor: pointer;
+  margin-top: -50px;
 }
 
 .search-bar {
