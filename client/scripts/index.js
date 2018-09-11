@@ -13,20 +13,25 @@ const app = new Vue({
         url: `http://localhost:3000/categories/${id}`
       })
         .then(data => {
-          console.log(data.data.data.products);
           app.products = data.data.data.products;
         })
         .catch(err => {
           console.log(err);
         });
     },
-    addToCart(id){
+    addToCart(data){
+      console.log(data);
       const cart = JSON.parse(localStorage.getItem('cart'));
-      let obj = {};
-      obj.id = id;
-      cart.push(obj);
-      this.cart = cart;
-      localStorage.setItem('cart',JSON.stringify(cart));
+      if(cart===null){
+        const arr = [];
+        arr.push(data);
+        this.cart = arr;
+        localStorage.setItem('cart',JSON.stringify(arr));
+      } else{
+        cart.push(data);
+        this.cart = cart;
+        localStorage.setItem('cart',JSON.stringify(cart));
+      }
     }
   },
   data : function(){
@@ -39,6 +44,7 @@ const app = new Vue({
   },
   created :
     function(){
+      this.cart = JSON.parse(localStorage.getItem('cart'));
       axios({
         method: 'get',
         url: 'http://localhost:3000/categories/',

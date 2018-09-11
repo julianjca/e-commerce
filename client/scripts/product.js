@@ -1,6 +1,6 @@
 Vue.component('product-comp',{
   template : `
-  <div class="product-container hvr-grow" :id="product._id" @click="addToCart(product._id)">
+  <div class="product-container hvr-grow" :id="product._id" @click="addToCart(product)">
     <img src="https://via.placeholder.com/200x200" alt="">
     <p>{{product.name}}</p>
     <p>Price : {{product.price}}</p>
@@ -8,8 +8,8 @@ Vue.component('product-comp',{
   `,
   props : ['product'],
   methods : {
-    addToCart(id){
-      this.$emit('add-cart',id);
+    addToCart(product){
+      this.$emit('add-cart',product);
     }
   }
 });

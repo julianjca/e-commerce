@@ -19,7 +19,3 @@ Vue.component('main-category', {
     props : ['category']
   }
 );
-
-// const app = new Vue({
-//   el: '#app',
-// });

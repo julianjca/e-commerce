@@ -121,8 +121,7 @@ p {
 }
 
 .landing {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.438)),
-    url("../images/landing-image-ales-nestril.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.438)), url("../images/landing-image-ales-nestril.jpg");
   width: 100%;
   height: 550px;
   background-position: center center;
@@ -201,8 +200,7 @@ p {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 4px 8px 0 rgba(58, 58, 58, 0.2),
-    0 6px 20px 0 rgba(65, 65, 65, 0.19) !important;
+  box-shadow: 0 4px 8px 0 rgba(58, 58, 58, 0.2), 0 6px 20px 0 rgba(65, 65, 65, 0.19) !important;
   cursor: pointer;
 }
 
@@ -223,7 +221,8 @@ p {
   /* Location of the box */
   width: 60%;
   /* Full width */
-  height: 600px;
+  height: 100%;
+  padding-bottom: 30%;
   /* Full height */
   /* Enable scroll if needed */
   background-color: #ffffff;
@@ -235,7 +234,7 @@ p {
   text-align: center;
   left: 0;
   right: 0;
-  margin-top: -100px;
+  top: 0;
   position: absolute;
 }
 
@@ -245,7 +244,7 @@ p {
 
 #close {
   cursor: pointer;
-  margin-top: -50px;
+  margin-top: -40px;
 }
 
 .search-bar {
@@ -304,7 +303,8 @@ p {
 
 .shopping-cart {
   width: 750px;
-  height: 423px;
+  height: 100%;
+  padding-bottom: 20%;
   margin: 80px auto;
   background: #ffffff;
   box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.1);
@@ -323,7 +323,7 @@ p {
 }
 
 .item {
-  padding: 20px 30px;
+  padding: 0px 30px;
   height: 120px;
   display: flex;
 }

@@ -31,14 +31,30 @@
 <body>
   <div id="app">
     <main-header @show-modal="show"></main-header>
-    <main-cart v-show="showModal" @close-modal="close"></main-cart>
+
     <main-landing></main-landing>
+
     <div class="category-list">
       <ul>
         <li v-for="category in categories">
           <main-category v-bind:category="category" @call-category="findCategory"></main-category>
         </li>
       </ul>
+    </div>
+
+    <div id="cart" v-if="showModal">
+      <div class="title">
+        Shopping Bag
+      </div>
+      <div class="shopping-cart">
+        <div v-for="item in cart" :key="item.id">
+          <main-cart v-bind:item="item"></main-cart>
+        </div>
+      </div>
+
+      <div v-on:click="close" id="close">
+        <h4>close</h4>
+      </div>
     </div>
 
     <div class="best-seller">
@@ -49,6 +65,7 @@
         </div>
       </div>
     </div>
+
     <advantage-comp></advantage-comp>
     <main-footer></main-footer>
 
