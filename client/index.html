@@ -48,7 +48,7 @@
       </div>
       <div class="shopping-cart">
         <div v-for="item in cart" :key="item.id">
-          <main-cart v-bind:item="item"></main-cart>
+          <main-cart v-bind:item="item" @delete-on-parent="deleteFromCart"></main-cart>
         </div>
       </div>
 

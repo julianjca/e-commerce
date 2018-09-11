@@ -45,6 +45,8 @@ Vue.component('main-cart', {
       },
       deleteItem(){
         this.show = false;
+        const id = this.item._id;
+        this.$emit('delete-on-parent',id);
       }
     },
     props : ['item']

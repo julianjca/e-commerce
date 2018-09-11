@@ -32,6 +32,17 @@ const app = new Vue({
         this.cart = cart;
         localStorage.setItem('cart',JSON.stringify(cart));
       }
+    },
+    deleteFromCart(id){
+      const cart = JSON.parse(localStorage.getItem('cart'));
+      console.log(id);
+      for(let i = 0;i< cart.length;i++){
+        if(cart[i]._id===id){
+          cart.splice(i,1);
+        }
+      }
+      this.cart = cart;
+      localStorage.setItem('cart',JSON.stringify(cart));
     }
   },
   data : function(){
