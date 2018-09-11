@@ -6,37 +6,50 @@ const app = new Vue({
     },
     close : function(){
       this.showModal = false;
+    },
+    findCategory : function(id){
+      console.log(id);
     }
   },
   data : function(){
     return{
       showModal : false,
-      products : [
-        {
-        name : "Product 1",
-        price : 100000
-        },
-        {
-        name : "Product 2",
-        price : 100000
-        },
-        {
-        name : "Product 3",
-        price : 100000
-        },
-        {
-        name : "Product 4",
-        price : 100000
-        },
-        {
-        name : "Product 5",
-        price : 100000
-        },
-        {
-        name : "Product 6",
-        price : 100000
-        }
-    ]
+      products : [],
+      categories : [
+        'test 1',
+        'test 2',
+        'test 3',
+        'test 4',
+        'test 5',
+        'test 6',
+        'test 7',
+      ]
     };
-  }
+  },
+  created :
+    function(){
+      axios({
+        method: 'get',
+        url: 'http://localhost:3000/products/',
+      })
+        .then(data => {
+          console.log(data.data.data);
+          app.products = data.data.data;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+
+        axios({
+          method: 'get',
+          url: 'http://localhost:3000/categories/',
+        })
+          .then(data => {
+            console.log(data.data.data);
+            app.categories = data.data.data;
+          })
+          .catch(err => {
+            console.log(err);
+          });
+    }
 });

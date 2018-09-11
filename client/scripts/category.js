@@ -1,29 +1,7 @@
 Vue.component('main-category', {
   template: `
-  <div class="category-list">
-      <ul>
-        <li>
-          <a href="#" class="hvr-grow">
-            Category 1
-          </a>
-        </li>
-        <li>
-          <a href="#" class="hvr-grow">Category 2</a>
-        </li>
-        <li>
-          <a href="#" class="hvr-grow">Category 3</a>
-        </li>
-        <li>
-          <a href="#" class="hvr-grow">Category 3</a>
-        </li>
-        <li>
-          <a href="#" class="hvr-grow">Category 3</a>
-        </li>
-        <li>
-          <a href="#" class="hvr-grow">Category 3</a>
-        </li>
-      </ul>
-    </div>`,
+      <a href="#" class="hvr-grow" :id ="category._id" @click="callCategory(category._id)">{{ category.name }}</a>
+  `,
     data : function(){
       return {
         show : false
@@ -32,8 +10,13 @@ Vue.component('main-category', {
     methods : {
       closeCart : function(){
         this.$emit('tutup');
+      },
+
+      callCategory : function(id){
+        this.$emit('call-category',id);
       }
-    }
+    },
+    props : ['category']
   }
 );
 

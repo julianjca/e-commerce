@@ -22,6 +22,9 @@
   <!-- hover -->
   <link rel="stylesheet" href="./styles/hover-min.css">
 
+  <!-- axios -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
   <title>E-Commerce</title>
 </head>
 
@@ -30,7 +33,13 @@
     <main-header @show-modal="show"></main-header>
     <main-cart v-show="showModal" @close-modal="close"></main-cart>
     <main-landing></main-landing>
-    <main-category></main-category>
+    <div class="category-list">
+      <ul>
+        <li v-for="category in categories">
+          <main-category v-bind:category="category" @call-category="findCategory"></main-category>
+        </li>
+      </ul>
+    </div>
 
     <div class="best-seller">
       <h2>Best Selling Products</h2>

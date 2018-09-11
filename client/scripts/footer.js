@@ -32,7 +32,3 @@ Vue.component('main-footer', {
   </div>
   `
 });
-
-// const app = new Vue({
-//   el: '#app',
-// });
