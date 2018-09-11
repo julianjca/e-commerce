@@ -20,16 +20,18 @@ module.exports = {
 
   read : function(req,res){
     Category.find({})
-    .then(data=>{
-      res.status(200).json({
-        msg : 'success finding data',
-        data : data
-      });
-    })
-    .catch(err=>{
-      res.status(500).json({
-        err
-      });
+    .populate('products')
+    .exec(function (err, data) {
+      if (err) {
+        res.status(500).json({
+          err
+        });
+      } else{
+        res.status(200).json({
+          msg : 'success finding data',
+          data : data
+        });
+      }
     });
   },
 
@@ -54,7 +56,11 @@ module.exports = {
       name: req.body.name,
       price : req.body.price,
       description : req.body.description
-    }})
+    },
+    $push :{
+      products : req.body.products
+    }
+  })
     .then(data=>{
       res.status(200).json({
         msg : 'success updating data',
@@ -67,4 +73,23 @@ module.exports = {
       });
     });
   },
+
+  findById : function(req,res){
+    Category.findOne({
+      _id : new mongodb.ObjectId(req.params.id)
+    })
+    .populate('products')
+    .exec(function (err, data) {
+      if (err) {
+        res.status(500).json({
+          err
+        });
+      } else{
+        res.status(200).json({
+          msg : 'success finding data',
+          data : data
+        });
+      }
+    });
+  }
 };
