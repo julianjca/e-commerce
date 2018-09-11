@@ -7,7 +7,6 @@ Vue.component('main-cart', {
           Shopping Bag
         </div>
 
-        <!-- Product #1 -->
         <div class="item">
           <div class="buttons">
             <span class="delete-btn"></span>
@@ -37,7 +36,6 @@ Vue.component('main-cart', {
           <div class="total-price">$549</div>
         </div>
 
-        <!-- Product #2 -->
         <div class="item">
           <div class="buttons">
             <span class="delete-btn"></span>
@@ -67,7 +65,6 @@ Vue.component('main-cart', {
           <div class="total-price">$870</div>
         </div>
 
-        <!-- Product #3 -->
         <div class="item">
           <div class="buttons">
             <span class="delete-btn"></span>

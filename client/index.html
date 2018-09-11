@@ -28,12 +28,9 @@
 <body>
   <div id="app">
     <main-header @show-modal="show"></main-header>
-
     <main-cart v-show="showModal" @close-modal="close"></main-cart>
-
     <main-landing></main-landing>
     <main-category></main-category>
-
 
     <div class="best-seller">
       <h2>Best Selling Products</h2>
@@ -41,78 +38,14 @@
         <div v-for="item in products">
           <product-comp v-bind:product="item"></product-comp>
         </div>
-        <!-- <div class="product-container hvr-grow">
-          <img src="./images/shoes1.jpg" alt="">
-          <p>Product 1</p>
-        </div>
-        <div class="product-container hvr-grow">
-          <img src="./images/shoes2.jpg" alt="">
-          <p>Product 1</p>
-
-        </div>
-        <div class="product-container hvr-grow">
-          <img src="./images/shoes3.jpg" alt="">
-          <p>Product 1</p>
-
-        </div>
-        <div class="product-container hvr-grow">
-          <img src="./images/shoes1.jpg" alt="">
-          <p>Product 1</p>
-
-        </div>
-        <div class="product-container hvr-grow">
-          <img src="./images/shoes2.jpg" alt="">
-          <p>Product 1</p>
-
-        </div>
-        <div class="product-container hvr-grow">
-          <img src="./images/shoes3.jpg" alt="">
-          <p>Product 1</p>
-
-        </div> -->
       </div>
     </div>
-
-    <div class="advantages">
-      <h2>Why Choose Us?</h2>
-      <div class="container-advantages">
-        <div class="category">
-
-          <img src="./images/tag.svg" alt="">
-          <h3>
-            Lots of Discount
-          </h3>
-        </div>
-        <div class="category">
-
-          <img src="./images/wallet.svg" alt="">
-          <h3>
-            Easy Payment
-          </h3>
-        </div>
-        <div class="category">
-
-          <img src="./images/courier.svg" alt="">
-          <h3>
-            24 Hour Customer Service
-          </h3>
-        </div>
-        <div class="category">
-
-          <img src="./images/delivery-truck.svg" alt="">
-          <h3>
-            Fast Delivery
-          </h3>
-        </div>
-      </div>
-
-    </div>
-
+    <advantage-comp></advantage-comp>
     <main-footer></main-footer>
 
   </div>
 
-
+  <script src="./scripts/advantages.js"></script>
   <script src="./scripts/product.js"></script>
   <script src="./scripts/landing.js"></script>
   <script src="./scripts/cart.js"></script>
@@ -120,7 +53,6 @@
   <script src="./scripts/category.js"></script>
   <script src="./scripts/header.js"></script>
   <script src="./scripts/index.js"></script>
-
 
 </body>
 
