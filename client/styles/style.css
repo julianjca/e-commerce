@@ -520,3 +520,10 @@ input:focus {
 .categories-footer h3 {
   color: #f1663f;
 }
+
+.login-form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

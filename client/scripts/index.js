@@ -1,12 +1,13 @@
 const app = new Vue({
   el: '#app',
   methods : {
-    show : function(){
+    show(){
       this.showModal= true;
     },
-    close : function(){
+    close(){
       this.showModal = false;
     },
+
     findCategory : function(id){
       axios({
         method: 'GET',
@@ -19,6 +20,7 @@ const app = new Vue({
           console.log(err);
         });
     },
+
     addToCart(data){
       console.log(data);
       const cart = JSON.parse(localStorage.getItem('cart'));
@@ -33,6 +35,7 @@ const app = new Vue({
         localStorage.setItem('cart',JSON.stringify(cart));
       }
     },
+
     deleteFromCart(id){
       const cart = JSON.parse(localStorage.getItem('cart'));
       console.log(id);
@@ -43,18 +46,39 @@ const app = new Vue({
       }
       this.cart = cart;
       localStorage.setItem('cart',JSON.stringify(cart));
+    },
+    login(loginData){
+      axios({
+        method : 'POST',
+        url : 'http://localhost:3000/login',
+        data : {
+          email : loginData.email,
+          password : loginData.password
+        }
+      })
+      .then(response=>{
+        localStorage.setItem('token',response.data.token);
+        app.isLogin = true;
+      })
+      .catch(err=>{
+        console.log(err);
+      });
     }
   },
+
   data : function(){
     return{
       showModal : false,
       products : [],
       categories : [],
-      cart : []
+      cart : [],
+      showLogin : true,
+      showRegister : true,
+      isLogin : false
     };
   },
-  created :
-    function(){
+
+  created : function(){
       this.cart = JSON.parse(localStorage.getItem('cart'));
       axios({
         method: 'get',
@@ -68,5 +92,22 @@ const app = new Vue({
         .catch(err => {
           console.log(err);
         });
+    },
+    mounted : function (){
+      axios({
+        method : 'GET',
+        url : 'http://localhost:3000/auth',
+        headers : {
+          token : localStorage.getItem('token')
+        }
+      })
+      .then(response=>{
+        if(response.data.message!==''){
+          app.isLogin = true;
+        }
+      })
+      .catch(err=>{
+        console.log(err);
+      });
     }
 });

@@ -17,10 +17,10 @@ Vue.component('main-header', {
           </a>
         </li>
         <li>
-          <a href="#" class="hvr-grow-shadow" id="register-nav">Register</a>
+          <a href="#" class="hvr-grow-shadow" id="register-nav" @click="showRegister">Register</a>
         </li>
         <li>
-          <a href="#" id="login-nav" class="hvr-grow-shadow">Log In</a>
+          <a href="#" id="login-nav" class="hvr-grow-shadow" @click="showLogin">Log In</a>
         </li>
       </ul>
     </div>
@@ -29,6 +29,13 @@ Vue.component('main-header', {
 methods : {
   showCart : function(){
     this.$emit('show-modal');
+  },
+  showLogin(){
+    this.$emit('show-login');
+
+  },
+  showRegister(){
+    this.$emit('show-register');
   }
 }
 });

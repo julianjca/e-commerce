@@ -62,5 +62,22 @@ module.exports = {
         message : "failed logging in"
       });
     });
+  },
+
+  auth : function(req,res){
+    jwt.verify(req.headers.token, process.env.JWT_SECRET, function(err, decoded) {
+      if(!err){
+        res.status(200).json({
+          data : decoded,
+          msg : "authenticated"
+        });
+      }
+      else{
+        res.status(403).json({
+          error : err,
+          msg : "unauthorized"
+        });
+      }
+    });
   }
 };
