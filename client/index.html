@@ -30,8 +30,9 @@
 
 <body>
   <div id="app">
-    <main-header @show-modal="show"></main-header>
-
+    <main-header @show-modal="show" @show-login="showingLogin" @show-register="showRegister=true" v-bind:log-status="isLogin"></main-header>
+    <login-form @login="login" v-if="showLogin" @close-login="showLogin=false"></login-form>
+    <register-form @register="register" v-if="showRegister" @close-register="showRegister=false"></register-form>
     <main-landing></main-landing>
 
     <div class="category-list">
@@ -67,11 +68,11 @@
     </div>
 
     <advantage-comp></advantage-comp>
-    <main-footer></main-footer>
 
-    <login-form @login="login" v-if="showLogin"></login-form>
+
 
   </div>
+  <script src="./scripts/register.js"></script>
   <script src="./scripts/login.js"></script>
   <script src="./scripts/advantages.js"></script>
   <script src="./scripts/product.js"></script>

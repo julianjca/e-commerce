@@ -13,7 +13,7 @@ module.exports = {
     })
     .then(data =>{
       res.status(200).json({
-        data
+        msg : 'success registering'
       });
     })
     .catch(err=>{
@@ -43,9 +43,7 @@ module.exports = {
             console.log(token);
             res.status( 200 ).json({
               mesg : 'login success',
-              token : token,
-              email : user.email,
-              name : user.name
+              token : token
             });
           }
         });

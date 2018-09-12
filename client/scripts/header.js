@@ -13,14 +13,17 @@ Vue.component('main-header', {
     <div class="menu">
       <ul class="navbar-nav">
         <li>
-          <a v-on:click="showCart" href="#" id="shopping-nav"><i class="fas fa-shopping-cart"></i>
+          <a v-on:click="showCart" href="#" id="shopping-nav" v-if="logStatus"><i class="fas fa-shopping-cart"></i>
           </a>
         </li>
         <li>
-          <a href="#" class="hvr-grow-shadow" id="register-nav" @click="showRegister">Register</a>
+          <a href="#" class="hvr-grow-shadow" id="register-nav" @click="showRegister" v-if="!logStatus">Register</a>
         </li>
         <li>
-          <a href="#" id="login-nav" class="hvr-grow-shadow" @click="showLogin">Log In</a>
+          <a href="#" id="login-nav" class="hvr-grow-shadow" @click="showLogin" v-if="!logStatus">Log In</a>
+        </li>
+        <li>
+          <a href="#" id="login-nav" class="hvr-grow-shadow" @click="logOut" v-if="logStatus">Log Out</a>
         </li>
       </ul>
     </div>
@@ -32,10 +35,15 @@ methods : {
   },
   showLogin(){
     this.$emit('show-login');
-
   },
   showRegister(){
     this.$emit('show-register');
+  },
+  logOut(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('cart');
+    location.reload();
   }
-}
+},
+  props : ['logStatus']
 });

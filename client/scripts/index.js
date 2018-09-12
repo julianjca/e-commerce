@@ -47,6 +47,7 @@ const app = new Vue({
       this.cart = cart;
       localStorage.setItem('cart',JSON.stringify(cart));
     },
+
     login(loginData){
       axios({
         method : 'POST',
@@ -59,6 +60,31 @@ const app = new Vue({
       .then(response=>{
         localStorage.setItem('token',response.data.token);
         app.isLogin = true;
+        app.showLogin = false;
+
+      })
+      .catch(err=>{
+        console.log(err);
+      });
+    },
+
+    showingLogin(){
+      this.showLogin = true;
+    },
+
+    register(registerData){
+      axios({
+        method : 'POST',
+        url : 'http://localhost:3000/register',
+        data : {
+          email : registerData.email,
+          password : registerData.password,
+          name : registerData.name
+        }
+      })
+      .then(response=>{
+        console.log(response);
+        app.showRegister = false;
       })
       .catch(err=>{
         console.log(err);
@@ -72,8 +98,8 @@ const app = new Vue({
       products : [],
       categories : [],
       cart : [],
-      showLogin : true,
-      showRegister : true,
+      showLogin : false,
+      showRegister : false,
       isLogin : false
     };
   },

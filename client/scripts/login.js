@@ -6,6 +6,7 @@ Vue.component('login-form',{
   <input type="password" v-model="password" placeholder="password">
   <br>
   <input type="submit" @click="login">
+  <button @click = "close">close</button>
   </div>
   `,
   methods : {
@@ -15,6 +16,10 @@ Vue.component('login-form',{
         password : this.password
       };
       this.$emit('login',loginData);
+    },
+
+    close(){
+      this.$emit('close-login');
     }
   },
   data: function(){
