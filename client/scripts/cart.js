@@ -20,7 +20,7 @@ Vue.component('main-cart', {
       <button class="plus-btn" type="button" name="button" @click="increaseTotal">
         <img src="./images/plus.svg" alt="" />
       </button>
-      <input type="text" name="name" value="1">
+      <h4>{{total}}</h4>
       <button class="minus-btn" type="button" name="button" @click="reduceTotal">
         <img src="./images/minus.svg" alt="" />
       </button>
@@ -33,15 +33,18 @@ Vue.component('main-cart', {
     data : function(){
       return {
         show : true,
-        price : this.item.price
+        price : this.item.price,
+        total : 1
       };
     },
     methods : {
       increaseTotal(){
         this.price += this.item.price;
+        this.total++;
       },
       reduceTotal(){
         this.price -= this.item.price;
+        this.total--;
       },
       deleteItem(){
         this.show = false;
