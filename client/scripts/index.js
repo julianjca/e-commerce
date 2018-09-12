@@ -65,6 +65,8 @@ const app = new Vue({
       })
       .catch(err=>{
         console.log(err);
+        app.errMess = "wrong password";
+
       });
     },
 
@@ -100,7 +102,8 @@ const app = new Vue({
       cart : [],
       showLogin : false,
       showRegister : false,
-      isLogin : false
+      isLogin : false,
+      errMess : ''
     };
   },
 
@@ -134,6 +137,7 @@ const app = new Vue({
       })
       .catch(err=>{
         console.log(err);
+        app.errMess = "Anda belum login";
       });
     }
 });
